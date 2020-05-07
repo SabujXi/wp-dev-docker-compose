@@ -4,6 +4,10 @@ if [ ! -d "./wp" ]; then
 else
   echo "wp directory already exists."
 fi
+
 USER=$(id -u):$(id -g)
-echo "User for docker compose: $USER."
-docker-compose "$@"
+
+echo "User for docker compose: $USER"
+
+sudo -E docker-compose "$@"
+

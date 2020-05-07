@@ -22,7 +22,7 @@ services:
       WORDPRESS_DB_PASSWORD: wppass
       WORDPRESS_DB_NAME: wp
     volumes:
-      - ./wp:/etc/www/html
+      - ./wp:/var/www/html
     networks:
       - wpdevnet
     ports:
