@@ -9,5 +9,5 @@ Docker compose for spinning up WordPress in current-dir/wp for development/testi
 - Example: ./run up
 
 # Hire a Docker/DevOps Expert/Sysadmin
-If you need a docker expert as a freelancer or something, don't hesitate to contact me at "md (dot) sabuj (dot) @ gmail.com"
+If you need a docker expert as a freelancer or something, don't hesitate to contact me at "md (dot) sabuj (dot) sarker @ gmail.com"
 
