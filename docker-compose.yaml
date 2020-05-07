@@ -1,0 +1,34 @@
+version: "3.5"
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: ROOTPASS
+      MYSQL_DATABASE: wp
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+    volumes:
+      - wpdevdbvol:/var/lib/mysql
+    networks:
+      - wpdevnet
+
+  wp:
+    depends_on: 
+      - db
+    image: wordpress:5.4.1-php7.2-apache
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wp
+    volumes:
+      - ./wp:/etc/www/html
+    networks:
+      - wpdevnet
+    ports:
+     - "80:80"
+    user: ${USER}
+volumes:
+  wpdevdbvol:
+networks:
+  wpdevnet:
